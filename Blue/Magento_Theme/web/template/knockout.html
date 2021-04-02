@@ -1,0 +1,27 @@
+<div class="block-ko">
+    <div class="title">Knockout</div>
+
+    <div class="add-item">
+        <input class="el-item" type="text" data-bind="value: inputName"/>
+        <input class="el-item" type="text" data-bind="value: inputLastName"/>
+        <button class="action primary el-item" data-bind="click: add">Add</button>
+    </div>
+
+    <!-- ko foreach: array() -->
+        <div class="output-item">
+            <!-- ko ifnot: change() -->
+                <span class="el-item elem-item" data-bind="text: name"></span>
+                <span class="el-item elem-item" data-bind="text: lastName"></span>
+                <button class="action primary el-item edit" data-bind="click: $parent.edit.bind($parent, $index)">Edit</button>
+                <button class="action primary el-item" data-bind="click: $parent.delete.bind($parent, $index)">Delete</button>
+            <!-- /ko -->
+            <!-- ko if: change() -->
+            <div class="edit-item">
+                <input class="el-item" type="text" data-bind="value: name"/>
+                <input class="el-item" type="text" data-bind="value: lastName"/>
+                <button class="action primary el-item edit" data-bind="click: $parent.ok.bind($parent, $index)">Ok</button>
+            </div>
+            <!-- /ko -->
+        </div>
+    <!-- /ko -->
+</div>
