@@ -1,0 +1,14 @@
+<?php for ($i = 0; $i<=3; $i++): ?>
+    <h2 data-mage-init='{"test":{"attr":"hello js"}}'> Hello Theme <?= $i;?> </h2>
+<?php endfor; ?>
+<span class="subtitle"><?= $block->getMyText(); ?></span>
+<span class="subtitle"> Variant 2 </span>
+<script type="text/x-magento-init">
+    {
+        ".subtitle": {
+            "test": {
+                "attr": "hello variant 2"
+            }
+        }
+    }
+</script>
